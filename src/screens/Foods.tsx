@@ -10,9 +10,7 @@ const FoodsScreen = ({ navigation }) => {
     const MenuCard = ({ item }) => {
         var item = item.item;
         return (
-            <View style={styles.menuCardContainer}>
-                {/* <Icon name='search' size={30} color={COLORS.orange} onPress={() => {}} /> */}
-                <View style={{
+            <View style={styles.menuCardContainer}><View style={{
                     backgroundColor: COLORS.white,
                     borderRadius: 100,
                     height: 40,
@@ -48,7 +46,7 @@ const FoodsScreen = ({ navigation }) => {
                         <Text style={{ color: COLORS.dark, fontWeight: 'bold' }}>${food.price}</Text>
                         <TouchableOpacity
                             onPress={() => { 
-                                alert("details screen comming soon")
+                                navigation.navigate("DetailsScreen", food)
                              }}>
 
                             <View style={{ height: 20, width: 20, right: 10, borderRadius: 100, backgroundColor: COLORS.orange }}>
