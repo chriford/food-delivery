@@ -1,9 +1,11 @@
 import React from 'react';
-import { FlatList, Image, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Dimensions, FlatList, Image, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import COLORS from '../const/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import FoodTypes from '../const/food.type';
+import foodList from '../const/foods';
 
+const { width } = Dimensions.get('screen');
 const FoodsScreen = ({ navigation }) => {
     const MenuCard = ({ item }) => {
         var item = item.item;
@@ -21,6 +23,40 @@ const FoodsScreen = ({ navigation }) => {
                     <Image style={styles.menuCardImage} source={item.image} />
                 </View>
                 <Text style={{ fontSize: 20, color: COLORS.orange, paddingLeft: 10 }}>{item.name}</Text>
+            </View>
+        )
+    }
+
+    const FoodCard = ({ food }) => {
+        var food = food.item;
+        return (
+
+            <View style={styles.foodCard}>
+                <View style={{ alignItems: 'center' }}>
+                    <Image style={styles.foodCardImage} source={food.image} />
+                </View>
+                <View style={{ flexDirection: 'column', paddingLeft: 20 }}>
+                    <View>
+                        <Text style={{ color: COLORS.dark, fontWeight: 'bold', fontSize: 24 }}>{food.name}</Text>
+                        <Text style={{ color: COLORS.secondary, fontSize: 16 }}>{food.name}</Text>
+                    </View>
+                    <View style={{
+                        top: 10,
+                        justifyContent: 'space-between',
+                        flexDirection: 'row',
+                    }}>
+                        <Text style={{ color: COLORS.dark, fontWeight: 'bold' }}>${food.price}</Text>
+                        <TouchableOpacity
+                            onPress={() => { 
+                                alert("details screen comming soon")
+                             }}>
+
+                            <View style={{ height: 20, width: 20, right: 10, borderRadius: 100, backgroundColor: COLORS.orange }}>
+                                <Icon name='add' size={20} color={COLORS.white} />
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                </View>
             </View>
         )
     }
@@ -75,6 +111,13 @@ const FoodsScreen = ({ navigation }) => {
                     renderItem={type => <MenuCard item={type} />}
                 />
             </View>
+            <FlatList
+                style={{ marginTop: 50, elevation: 12 }}
+                numColumns={2}
+                showsVerticalScrollIndicator={false}
+                data={foodList}
+                renderItem={dish => <FoodCard food={dish} />}
+            />
         </SafeAreaView>
     )
 }
@@ -96,7 +139,7 @@ const styles = StyleSheet.create({
         marginTop: 40
     },
     searchInput: {
-        backgroundColor: 'rgba(15, 15, 15, .2)',
+        backgroundColor: 'rgba(15, 15, 15, .1)',
         padding: 5,
         borderRadius: 10,
         paddingLeft: 0,
@@ -120,6 +163,24 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
         alignItems: 'center'
+    },
+    foodCard: {
+        height: 220,
+        backgroundColor: COLORS.white,
+        marginBottom: 70,
+        shadowRadius: 15,
+        overflow: 'visible',
+        marginHorizontal: 10,
+        width: (width / 2) - 25,
+        elevation: 13,
+
+    },
+    foodCardImage: {
+        borderRadius: 100,
+        height: 120,
+        width: "65%",
+        alignSelf: "center",
+        top: -50,
     },
     menuCardImage: {
         borderRadius: 100,
