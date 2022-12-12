@@ -5,5 +5,6 @@ const COLORS = {
     primary: 'rgb(30, 60, 200)',
     success: 'rgb(10, 100, 100)',
     danger: 'red',
+    orange: 'orange',
 }
 export default COLORS;

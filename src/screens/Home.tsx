@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { StatusBar } from "react-native";
 import { SafeAreaView } from "react-native";
 import COLORS from "../const/colors";
@@ -27,13 +27,15 @@ const HomeScreen = ({ navigation }) => {
                     <Text>We help you to find best and delicious food</Text>
                 </View>
             </View>
-            <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                <View style={styles.btn}>
-                    <Text style={{
-                        fontSize: 18,
-                        color: COLORS.white
-                    }}>Get Started</Text>
-                </View>
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('FoodsScreen')}>
+                    <View style={styles.btn}>
+                        <Text style={{
+                            fontSize: 18,
+                            color: COLORS.white
+                        }}>Get Started</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )
