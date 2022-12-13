@@ -16,7 +16,6 @@ const CartScreen = ({ navigation, route }) => {
                     justifyContent: 'space-between',
                     flexDirection: 'row',
                     alignItems: 'center',
-
                 }}>
                     <View style={{ justifyContent: 'center', height: 100, width: 150 }}>
                         <Image style={styles.imageDetail} source={food.image} />
@@ -39,8 +38,8 @@ const CartScreen = ({ navigation, route }) => {
                             <Text style={{ fontWeight: 'bold', color: COLORS.dark, fontSize: 20, left: 20 }}>{1}</Text>
                             <TouchableOpacity>
                                 <View style={styles.cartBtn}>
-                                    <Icon name="remove" size={25} color={COLORS.white} onPress={() => navigation.navigate("DetailsScreen", food)} />
-                                    <Icon name="add" size={25} color={COLORS.white} onPress={() => navigation.navigate("DetailsScreen", food)} />
+                                    <Icon name="remove" size={25} color={COLORS.white} onPress={() => {}} />
+                                    <Icon name="add" size={25} color={COLORS.white} onPress={() => {}} />
                                 </View>
                             </TouchableOpacity>
                         </View>
