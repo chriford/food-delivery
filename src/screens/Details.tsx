@@ -51,7 +51,7 @@ const DetailsScreen = ({ navigation, route }) => {
                         {food.description}
                     </Text>
                 </View>
-                <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
+                <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate('CartScreen', food)}>
                     <View style={styles.btn}>
                         <Text style={{fontSize: 20, color: COLORS.orange, fontWeight: 'bold'}}>Add To Cart</Text>
                     </View>
