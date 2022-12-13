@@ -4,6 +4,7 @@ import COLORS from '../const/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import FoodTypes from '../const/food.type';
 import foodList from '../const/foods';
+import BottomNavigator from '../components/BottomNavigator';
 
 const { width } = Dimensions.get('screen');
 const FoodsScreen = ({ navigation }) => {

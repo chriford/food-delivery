@@ -3,10 +3,13 @@ import { Dimensions, FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text,
 import COLORS from '../const/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import foodList from '../const/foods';
+import { useState } from 'react';
 
 const { width } = Dimensions.get('screen')
 
 const CartScreen = ({ navigation, route }) => {
+    const [totalPrice, setPrice] = useState(0)
+
     const food = route.params;
     const FoodCard = ({ item }) => {
         var item = item.item;
@@ -22,7 +25,6 @@ const CartScreen = ({ navigation, route }) => {
                     </View>
 
                     <View style={{
-                        // backgroundColor: 'gray',
                         justifyContent: 'space-between',
                         flexDirection: 'row',
                         width: "55%"
@@ -35,7 +37,7 @@ const CartScreen = ({ navigation, route }) => {
                             <Text style={{ color: COLORS.dark, fontSize: 18, fontWeight: 'bold' }}>${food.price}</Text>
                         </View>
                         <View>
-                            <Text style={{ fontWeight: 'bold', color: COLORS.dark, fontSize: 20, left: 20 }}>{1}</Text>
+                            <Text style={{ fontWeight: 'bold', color: COLORS.dark, fontSize: 20, left: 25 }}>{1}</Text>
                             <TouchableOpacity>
                                 <View style={styles.cartBtn}>
                                     <Icon name="remove" size={25} color={COLORS.white} onPress={() => {}} />
