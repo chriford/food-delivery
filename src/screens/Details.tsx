@@ -21,7 +21,7 @@ const DetailsScreen = ({ navigation, route }) => {
                 </View>
             </View>
             <View>
-                <Image style={foodImage} />
+                <Image source={food.image} style={styles.foodImage} />
             </View>
         </SafeAreaView>
     )
@@ -37,7 +37,9 @@ const styles = StyleSheet.create({
     foodImage: {
 
     },
-    FoodSection:
+    FoodSection: {
+        
+    }
 })
 
 export default DetailsScreen;
