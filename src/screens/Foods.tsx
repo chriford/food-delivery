@@ -48,7 +48,6 @@ const FoodsScreen = ({ navigation }) => {
                             onPress={() => { 
                                 navigation.navigate("DetailsScreen", food)
                              }}>
-
                             <View style={{ height: 20, width: 20, right: 10, borderRadius: 100, backgroundColor: COLORS.orange }}>
                                 <Icon name='add' size={20} color={COLORS.white} />
                             </View>
