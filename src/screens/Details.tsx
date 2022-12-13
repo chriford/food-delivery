@@ -3,7 +3,7 @@ import { Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Vie
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import COLORS from '../const/colors';
 
-// 4260915001645387
+// 42609150016453823427
 // 06/25
 // 142
 
