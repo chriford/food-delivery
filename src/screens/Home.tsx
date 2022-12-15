@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { StatusBar } from "react-native";
 import { SafeAreaView } from "react-native";
 import COLORS from "../const/colors";
@@ -14,7 +14,6 @@ const HomeScreen = ({ navigation }) => {
                 <View style={{
                     justifyContent: 'center',
                     alignItems: 'center',
-
                 }}>
                     <Text style={{
                         justifyContent: 'center',

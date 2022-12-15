@@ -4,13 +4,15 @@ import COLORS from '../const/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import FoodTypes from '../const/food.type';
 import foodList from '../const/foods';
+import BottomNavigator from '../components/BottomNavigator';
 
 const { width } = Dimensions.get('screen');
 const FoodsScreen = ({ navigation }) => {
     const MenuCard = ({ item }) => {
         var item = item.item;
         return (
-            <View style={styles.menuCardContainer}><View style={{
+            <View style={styles.menuCardContainer}>
+                <View style={{
                     backgroundColor: COLORS.white,
                     borderRadius: 100,
                     height: 40,
@@ -45,9 +47,9 @@ const FoodsScreen = ({ navigation }) => {
                     }}>
                         <Text style={{ color: COLORS.dark, fontWeight: 'bold' }}>${food.price}</Text>
                         <TouchableOpacity
-                            onPress={() => { 
+                            onPress={() => {
                                 navigation.navigate("DetailsScreen", food)
-                             }}>
+                            }}>
                             <View style={{ height: 20, width: 20, right: 10, borderRadius: 100, backgroundColor: COLORS.orange }}>
                                 <Icon name='add' size={20} color={COLORS.white} />
                             </View>

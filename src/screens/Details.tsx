@@ -3,7 +3,7 @@ import { Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Vie
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import COLORS from '../const/colors';
 
-// 4260915001645387
+// 42609150016453823427
 // 06/25
 // 142
 
@@ -51,7 +51,7 @@ const DetailsScreen = ({ navigation, route }) => {
                         {food.description}
                     </Text>
                 </View>
-                <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
+                <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate('CartScreen', food)}>
                     <View style={styles.btn}>
                         <Text style={{fontSize: 20, color: COLORS.orange, fontWeight: 'bold'}}>Add To Cart</Text>
                     </View>
